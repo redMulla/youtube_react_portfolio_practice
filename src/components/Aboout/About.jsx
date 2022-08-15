@@ -8,7 +8,7 @@ const About = () => {
     const animationTimeout = () => {
         setTimeout(() => {
             setLetterClass('text-animate-hover')
-        }, 4000)
+        }, 3000)
     }
 
     useEffect(() => {
@@ -17,7 +17,7 @@ const About = () => {
 
   return (
     <div className='container about-page'>
-      <div className="text-zone">
+      <div className="text-zone unique">
         <h1>
           <AnimatedLetters
             letterClass={letterClass}
