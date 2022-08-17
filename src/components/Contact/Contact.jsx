@@ -23,7 +23,7 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        'gmail',
+        'service_p4lwqhv',
         'template_m80gecp',
         refForm.current,
         'VTi5xaEBm7C-Eed4n'
@@ -74,6 +74,15 @@ const Contact = () => {
                 </ul>
               </form>
             </div>
+          </div>
+          <div className="info-map">
+            Slobodan Gajic,
+            <br />
+            Serbia,
+            <br />
+            Branka RadiCevica 19,22000 <br />
+            Sremska Miltrovica <br />
+            <span>testtry@gmail.com</span>
           </div>
       </div>
       <Loader type='pacman' />
