@@ -1,20 +1,43 @@
 import Loader from 'react-loaders'
 import './Contact.scss';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import AnimatedLetters from '../AnimatedLetters/AnimatedLetters'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
+  const refForm = useRef()
 
-    const animationTimeout = () => {
-      setTimeout(() => {
-        setLetterClass('text-animate-hover')
-      }, 3000)
-    }
+  const animationTimeout = () => {
+    setTimeout(() => {
+      setLetterClass('text-animate-hover')
+    }, 3000)
+  }
 
-    useEffect(() => {
-      return animationTimeout()
-    }, [])
+  useEffect(() => {
+    return animationTimeout()
+  }, [])
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+
+    emailjs
+      .sendForm(
+        'gmail',
+        'template_m80gecp',
+        refForm.current,
+        'VTi5xaEBm7C-Eed4n'
+      )
+      .then (
+        () => {
+          alert('Message successfully sent')
+          window.location.reload(false)
+        },
+        () => {
+          alert('Failed to send message, please try again')
+        }
+      )
+  }
 
   return (
     <>
@@ -31,7 +54,7 @@ const Contact = () => {
               or question, dont hesitate to contact ma using below form either.
             </p>
             <div className="contact-form">
-              <form action="">
+              <form ref={refForm} onSubmit={sendEmail}>
                 <ul>
                   <li className="half">
                     <input type="text" name="name" placeholder='Name' required />
