@@ -84,6 +84,7 @@ const Contact = () => {
             Sremska Miltrovica <br />
             <span>testtry@gmail.com</span>
           </div>
+          <div className="map-wrap"></div>
       </div>
       <Loader type='pacman' />
     </>
