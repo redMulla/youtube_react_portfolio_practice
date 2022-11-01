@@ -3,7 +3,7 @@ import './Contact.scss';
 import React, { useEffect, useState, useRef } from 'react'
 import AnimatedLetters from '../AnimatedLetters/AnimatedLetters'
 import emailjs from '@emailjs/browser'
-import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet'
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
